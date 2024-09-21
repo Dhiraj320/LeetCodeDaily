@@ -1,9 +1,10 @@
-package String;/*
-//Approach (Using simple substring check for Prefix and Suffix)
+package String;
+
+public class Q1 {
+   /*
+    //Approach 1 (Using simple substring check for Prefix and Suffix)
 //T.C : O(n^2)
 //S.C : O(n)
-class Solution {
-
     public String shortestPalindrome(String s) {
         int length = s.length();
         String reversedString = new StringBuilder(s).reverse().toString();
@@ -11,23 +12,21 @@ class Solution {
         // Iterate through the string to find the longest palindromic prefix
         for (int i = 0; i < length; i++) {
             if (
-                s.substring(0, length - i).equals(reversedString.substring(i))
+                    s.substring(0, length - i).equals(reversedString.substring(i))
             ) {
                 return new StringBuilder(reversedString.substring(0, i))
-                    .append(s)
-                    .toString();
+                        .append(s)
+                        .toString();
             }
         }
         return "";
     }
-}
-*/
+    */
 
 
-//Approach (Using LPS in KMP)
+    //Approach 2(Using LPS in KMP)
 //T.C : O(n)
 //S.C : O(n)
-class Solution {
     // Function to compute the LPS (The Longest Proper Prefix which is also Suffix) array
     public void computeLPS(String pattern, int[] lps) {
         int M = pattern.length();
